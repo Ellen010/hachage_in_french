@@ -1,0 +1,20 @@
+Principe du hachage :
+Le hachage est une opération cryptographique qui convertit un mot de passe en une suite de caractères aléatoires appelée "haché". Cette opération est irréversible, ce qui signifie qu'il est pratiquement impossible de revenir au mot de passe original à partir du haché.
+
+Pourquoi l'utiliser ?
+Lorsque tu enregistres un mot de passe dans une base de données, il ne doit jamais être stocké en clair (lisible). Le hachage permet de le transformer en une chaîne de caractères cryptée.
+Fonctionnement :
+Le mot de passe passe par une fonction de hachage qui applique plusieurs transformations mathématiques pour générer une chaîne de caractères sécurisée.
+2. Nombre d'itérations de hachage ("Coût") :
+Le nombre d'itérations indique combien de fois le mot de passe est passé à travers la fonction de hachage. Cela renforce la sécurité car plus il y a d'itérations, plus il est difficile de casser le mot de passe, mais cela augmente aussi le temps de traitement.
+
+Exemple concret :
+Mot de passe en clair : "azerty123"
+Nombre d'itérations : 10
+Mot de passe haché : "LQOGRdFTLqAtrJgHz5arB5AC..."
+Chaque itération passe le mot de passe par l'algorithme de hachage 10 fois pour augmenter la sécurité.
+3. Le module bcrypt :
+bcrypt est un module JavaScript qui est couramment utilisé pour le hachage des mots de passe et leur vérification. Il est réputé pour sa capacité à renforcer la sécurité grâce à l'utilisation de salts et d'itérations.
+
+Salting : bcrypt ajoute un "salt" (une donnée aléatoire) avant le hachage pour éviter que deux mots de passe identiques génèrent le même haché.
+Résultat : Même si deux utilisateurs choisissent le même mot de passe, leurs hachés seront différents grâce à ce sel.
